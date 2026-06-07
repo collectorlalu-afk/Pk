@@ -1,40 +1,36 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const FAQ = () => {
   const faqs = [
     {
-      question: 'How do I access the vault after purchase?',
-      answer: 'Immediately after checkout, you will receive an email with your login credentials to our secure dashboard where you can download all lists and guides.',
+      question: 'How do I access the vendor links after purchase?',
+      answer: 'Immediately after checkout, you will receive an automated email with direct access to your purchased vendor links and instructions.',
     },
     {
-      question: 'Are these vendors still active in 2024?',
-      answer: 'Yes! We update our directory monthly. We remove inactive suppliers and add new verified ones to ensure you always have the best links.',
+      question: 'Are these vendors verified for 2024?',
+      answer: 'Yes. Our team manually verifies every supplier to ensure they are active, reliable, and offering competitive pricing.',
     },
     {
-      question: 'Do I need a business license to use these vendors?',
-      answer: 'Most vendors in our directory work with both individuals and registered businesses. Some premium bulk suppliers may require a resale certificate for tax exemption.',
+      question: 'What is your refund policy?',
+      answer: 'Due to the digital nature of our products and instant access to proprietary information, all sales are final. We stand by the quality of our sources.',
     },
     {
-      question: 'What is the refund policy?',
-      answer: 'Due to the digital nature of our products and instant access to proprietary vendor information, all sales are final. We guarantee the quality of our links.',
-    },
-    {
-      question: 'How much starting capital do I need?',
-      answer: 'Our directory includes vendors with No Minimum Order Quantity (MOQ) for beginners, as well as bulk suppliers for those ready to invest $500+.',
+      question: 'Do these vendors ship internationally?',
+      answer: 'Most of our listed vendors offer worldwide shipping. Some electronics and moissanite suppliers ship directly from their manufacturing hubs to you or your customer.',
     }
   ];
 
   return (
-    <section id="faq" className="py-24 bg-[#080808]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-24 bg-black">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Common <span className="text-primary">Questions</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+            Frequently Asked <span className="text-muted">Questions</span>
           </h2>
-          <p className="text-gray-400 text-lg">
-            Everything you need to know before joining the vault.
+          <p className="text-muted-foreground">
+            Quick answers to help you get started.
           </p>
         </div>
 
@@ -52,13 +48,19 @@ const FAQItem = ({ faq }: { faq: { question: string; answer: string } }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="glass-panel rounded-2xl overflow-hidden border border-white/5">
+    <div className="border-b border-neutral-900">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-white/5 transition-colors"
+        className="w-full py-6 text-left flex justify-between items-center group"
       >
-        <span className="text-white font-bold text-lg">{faq.question}</span>
-        {isOpen ? <ChevronUp className="text-primary" /> : <ChevronDown className="text-gray-500" />}
+        <span className="text-white font-medium text-lg group-hover:text-neutral-300 transition-colors">
+          {faq.question}
+        </span>
+        {isOpen ? (
+          <Minus className="w-5 h-5 text-muted-foreground" />
+        ) : (
+          <Plus className="w-5 h-5 text-muted-foreground" />
+        )}
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -66,9 +68,10 @@ const FAQItem = ({ faq }: { faq: { question: string; answer: string } }) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="overflow-hidden"
           >
-            <div className="px-8 pb-6 text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+            <div className="pb-8 text-muted-foreground leading-relaxed">
               {faq.answer}
             </div>
           </motion.div>

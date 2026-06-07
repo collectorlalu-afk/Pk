@@ -6,36 +6,31 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
       colors: {
-        background: "#0a0a0a",
+        background: "#000000",
+        foreground: "#ffffff",
+        card: "#0a0a0a",
         primary: {
-          DEFAULT: "#6366f1",
-          hover: "#4f46e5",
+          DEFAULT: "#ffffff",
+          hover: "#e5e5e5",
+          foreground: "#000000",
         },
-        accent: {
-          blue: "#0ea5e9",
-          purple: "#a855f7",
-          green: "#22c55e",
-        }
+        muted: {
+          DEFAULT: "#737373",
+          foreground: "#a3a3a3",
+        },
+        border: "#262626",
       },
       animation: {
-        'gradient': 'gradient 8s linear infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
       },
       keyframes: {
-        gradient: {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center'
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center'
-          }
-        },
         glow: {
-          'from': { 'box-shadow': '0 0 5px #6366f1, 0 0 10px #6366f1' },
-          'to': { 'box-shadow': '0 0 20px #6366f1, 0 0 30px #6366f1' }
+          'from': { 'box-shadow': '0 0 5px rgba(255, 255, 255, 0.1), 0 0 10px rgba(255, 255, 255, 0.05)' },
+          'to': { 'box-shadow': '0 0 15px rgba(255, 255, 255, 0.2), 0 0 25px rgba(255, 255, 255, 0.1)' }
         }
       }
     },
