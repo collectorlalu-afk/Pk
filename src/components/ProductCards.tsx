@@ -16,7 +16,7 @@ const products = [
     description: 'High-quality supplier access for premium electronic products, gadgets, and specialized components.',
     price: '49',
     priceId: 'price_electronics_id',
-    image: './electronics-vendor.png',
+    image: 'electronics-vendor.png',
   },
   {
     id: 'clothing',
@@ -24,7 +24,7 @@ const products = [
     description: 'Direct access to verified clothing suppliers for latest fashion trends, streetwear, and luxury apparel.',
     price: '39',
     priceId: 'price_clothing_id',
-    image: './clothing-vendor.png',
+    image: 'clothing-vendor.png',
   },
   {
     id: 'perfume',
@@ -32,7 +32,7 @@ const products = [
     description: 'Exclusive supplier links for high-end designer fragrances and rare niche perfume houses.',
     price: '45',
     priceId: 'price_perfume_id',
-    image: './perfume-vendor.png',
+    image: 'perfume-vendor.png',
   },
   {
     id: 'moissanite',
@@ -40,7 +40,7 @@ const products = [
     description: 'Direct sourcing for premium moissanite gemstones and high-end jewelry manufacturing suppliers.',
     price: '59',
     priceId: 'price_moissanite_id',
-    image: './moissanite-vendor.png',
+    image: 'moissanite-vendor.png',
   }
 ];
 
@@ -190,9 +190,9 @@ const ProductCards = () => {
                 <img 
                   src={product.image} 
                   alt={product.name}
-                  className="w-full h-full object-cover opacity-60 group-hover:opacity-90 group-hover:scale-110 transition-all duration-700 ease-out grayscale brightness-125"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out brightness-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/50 to-[#0a0a0a]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/30 to-[#0a0a0a]"></div>
               </div>
 
               <div className="relative z-10 p-8 pt-2 flex flex-col flex-grow">
