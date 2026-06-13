@@ -12,7 +12,7 @@ const Testimonials = () => {
     {
       user: 'Sarah M.',
       role: 'Amazon FBA',
-      text: 'VendorVault saved me weeks of research. The verification process they do is legit. Highly recommended for anyone starting out.',
+      text: 'PK Sells saved me weeks of research. The verification process they do is legit. Highly recommended for anyone starting out.',
       rating: 5,
     },
     {
@@ -34,10 +34,10 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Hear from the <span className="text-primary">Vault</span>
+            Hear from the <span className="text-primary">Community</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Join thousands of successful resellers who found their edge with VendorVault.
+            Join thousands of successful resellers who found their edge with PK Sells.
           </p>
         </div>
 

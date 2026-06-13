@@ -45,22 +45,33 @@ app.use(express.json());
 
 // Stripe checkout session
 app.post('/api/create-checkout-session', async (req, res) => {
-  const { priceId, tierName } = req.body;
+  const { items } = req.body;
+
+  if (!items || !Array.isArray(items) || items.length === 0) {
+    return res.status(400).json({ error: 'No items provided' });
+  }
 
   try {
+    const line_items = items.map((item: any) => ({
+      price_data: {
+        currency: 'usd',
+        product_data: {
+          name: item.name,
+        },
+        unit_amount: 2000, // $20.00
+      },
+      quantity: 1,
+    }));
+
     const session = await stripeClient.checkout.sessions.create({
       payment_method_types: ['card'],
-      line_items: [
-        {
-          price: priceId,
-          quantity: 1,
-        },
-      ],
+      line_items,
       mode: 'payment',
       success_url: `${process.env.CLIENT_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.CLIENT_URL}/`,
       metadata: {
-        tierName,
+        itemCount: items.length.toString(),
+        items: items.map(i => i.name).join(', '),
       },
     });
 

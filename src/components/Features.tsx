@@ -5,7 +5,7 @@ const Features = () => {
   const features = [
     {
       title: 'Verified Suppliers',
-      description: 'Every vendor in our vault is hand-vetted for quality, reliability, and shipping speed.',
+      description: 'Every vendor in our directory is hand-vetted for quality, reliability, and shipping speed.',
       icon: <ShieldCheck className="w-10 h-10 text-primary" />,
     },
     {
@@ -33,7 +33,7 @@ const Features = () => {
             Everything You Need to <span className="text-primary">Scale</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            We provide the infrastructure. You provide the hustle. Here's what's inside the vault.
+            We provide the infrastructure. You provide the hustle. Here's what's inside the directory.
           </p>
         </div>
 
