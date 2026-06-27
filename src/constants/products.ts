@@ -11,8 +11,10 @@ export interface Product {
   description: string;
   longDescription: string;
   price: number;
+  originalPrice: number;
   priceId: string;
   image: string;
+  lineImage: string;
   included: string[];
   reviews: Review[];
 }
@@ -23,9 +25,11 @@ export const products: Product[] = [
     name: 'Electronic Vendor',
     description: 'High-quality supplier access for premium electronic products, gadgets, and specialized components.',
     longDescription: 'Unlock direct access to the world\'s most reliable electronics suppliers. Whether you\'re looking for the latest consumer tech, specialized components, or high-margin gadgets, our vetted list ensures you get factory-direct pricing without the middleman. Perfect for dropshippers and bulk buyers alike.',
-    price: 20,
-    priceId: 'price_electronics_20',
+    price: 15,
+    originalPrice: 30,
+    priceId: 'price_electronics_15',
     image: 'electronics-vendor.png',
+    lineImage: 'electronics-line.png',
     included: [
       'Direct contact info for 50+ verified electronics suppliers',
       'Access to factory-direct bulk pricing',
@@ -53,9 +57,11 @@ export const products: Product[] = [
     name: 'Clothing Vendor',
     description: 'Direct access to verified clothing suppliers for latest fashion trends, streetwear, and luxury apparel.',
     longDescription: 'Step into the fashion industry with confidence. Our clothing vendor directory connects you with premium manufacturers and wholesalers specializing in everything from high-street fashion to luxury streetwear. Skip the vetting process and start building your brand with quality-tested sources.',
-    price: 20,
-    priceId: 'price_clothing_20',
+    price: 15,
+    originalPrice: 30,
+    priceId: 'price_clothing_15',
     image: 'clothing-vendor.png',
+    lineImage: 'clothing-line.png',
     included: [
       'Links to 70+ top-tier clothing manufacturers',
       'Sources for streetwear, activewear, and formal attire',
@@ -83,9 +89,11 @@ export const products: Product[] = [
     name: 'Perfume Vendor',
     description: 'Exclusive supplier links for high-end designer fragrances and rare niche perfume houses.',
     longDescription: 'The fragrance market is high-margin but hard to navigate. We provide exclusive links to authentic designer perfume wholesalers and niche fragrance houses. Get access to the most sought-after scents at prices that allow for significant retail markups.',
-    price: 20,
-    priceId: 'price_perfume_20',
+    price: 15,
+    originalPrice: 30,
+    priceId: 'price_perfume_15',
     image: 'perfume-vendor.png',
+    lineImage: 'perfume-line.png',
     included: [
       'Authentic designer fragrance wholesalers',
       'Hard-to-find niche perfume suppliers',
@@ -113,9 +121,11 @@ export const products: Product[] = [
     name: 'Moissanite Vendor',
     description: 'Direct sourcing for premium moissanite gemstones and high-end jewelry manufacturing suppliers.',
     longDescription: 'Capitalize on the booming moissanite market. Our directory provides direct sourcing for premium moissanite gemstones and high-end jewelry manufacturers. Whether you\'re selling loose stones or custom-set pieces, these vendors offer the highest clarity and brilliance at wholesale rates.',
-    price: 20,
-    priceId: 'price_moissanite_20',
+    price: 15,
+    originalPrice: 30,
+    priceId: 'price_moissanite_15',
     image: 'moissanite-vendor.png',
+    lineImage: 'moissanite-line.png',
     included: [
       'Direct links to top moissanite labs and manufacturers',
       'Custom jewelry setting services',

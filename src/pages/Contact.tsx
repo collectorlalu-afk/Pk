@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Mail, MessageSquare, Send, Globe, Share2 } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import Ticker from '../components/Ticker';
 import Footer from '../components/Footer';
 import Cart from '../components/Cart';
 import { useState } from 'react';
@@ -22,6 +23,7 @@ const Contact = () => {
 
   return (
     <div className="bg-black min-h-screen text-white font-sans antialiased">
+      <Ticker />
       <Navbar />
       
       <main className="pt-40 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

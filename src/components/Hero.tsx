@@ -10,79 +10,67 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background with Grid and Glow */}
-      <div className="absolute inset-0 bg-grid opacity-20"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a] to-[#0a0a0a]"></div>
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-32 overflow-hidden bg-black">
+      {/* Background Grid */}
+      <div className="absolute inset-0 bg-grid opacity-[0.03]"></div>
       
-      {/* Animated Glow Blobs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-purple/10 rounded-full blur-[120px] animate-pulse delay-700"></div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-semibold mb-6">
-            Trusted by 5,000+ Resellers
-          </span>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
-            Start Reselling <span className="text-gradient uppercase">Smarter.</span><br />
-            <span className="text-white uppercase">Get Access Instantly.</span>
+          <div className="flex justify-center mb-8">
+            <span className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/60 text-[10px] font-black uppercase tracking-[0.3em]">
+              Premium Supplier Network
+            </span>
+          </div>
+
+          <h1 className="text-6xl md:text-[6.5rem] font-black tracking-tighter mb-8 leading-[0.9]">
+            START <span className="text-neutral-600">RESELLING</span><br />
+            <span className="text-white">SMARTER.</span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-medium">
-            Skip the guesswork. Access our hand-vetted directory of suppliers, cheap bulk pricing, and winning product lists today.
+          
+          <p className="text-xl text-neutral-500 max-w-2xl mx-auto mb-12 font-bold uppercase tracking-tight">
+            Instant Access to Hand-Vetted Factory Sources. 
+            Skip the Vetting. Go Straight to Profit.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button 
               onClick={scrollToProducts}
-              className="group relative bg-white text-black px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm transition-all shadow-[0_0_25px_rgba(255,255,255,0.1)] flex items-center gap-2 hover:bg-neutral-200 active:scale-95"
+              className="group relative bg-white text-black px-12 py-5 rounded-full font-black uppercase tracking-widest text-xs transition-all shadow-2xl hover:bg-neutral-200 active:scale-95 flex items-center gap-2"
             >
               Access Directory
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4" />
             </button>
             <button 
               onClick={scrollToProducts}
-              className="glass-panel text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm transition-all hover:bg-white/5 border border-white/10 active:scale-95"
+              className="px-12 py-5 rounded-full font-black uppercase tracking-widest text-xs transition-all hover:bg-white/5 border border-white/10 active:scale-95 text-white"
             >
-              View Pricing
+              Learn More
             </button>
           </div>
         </motion.div>
 
-        {/* Mockup Preview / Stats Preview */}
+        {/* Social Proof Stats */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 50 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="mt-20 relative"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t border-white/5 pt-12"
         >
-          <div className="relative glass-panel p-2 rounded-[2.5rem] overflow-hidden max-w-4xl mx-auto neon-border">
-            <img 
-              src="hero-bg.png" 
-              alt="Dashboard Preview" 
-              className="w-full h-auto rounded-[2rem] opacity-80"
-            />
-            {/* Overlay features */}
-            <div className="absolute inset-0 flex items-center justify-center">
-               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-8 w-full">
-                  {[
-                    { label: 'Verified Vendors', value: '450+' },
-                    { label: 'Winning Products', value: '1.2k' },
-                    { label: 'Success Rate', value: '94%' },
-                    { label: 'Avg. Profit', value: '$2.5k+' }
-                  ].map((stat, i) => (
-                    <div key={i} className="glass-panel p-4 rounded-2xl text-center">
-                      <div className="text-2xl font-bold text-white">{stat.value}</div>
-                      <div className="text-xs text-gray-400 uppercase tracking-widest">{stat.label}</div>
-                    </div>
-                  ))}
-               </div>
+          {[
+            { label: 'Active Users', value: '5k+' },
+            { label: 'Verified Vendors', value: '450+' },
+            { label: 'Market Access', value: 'Instant' },
+            { label: 'Success Rate', value: '94%' }
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-3xl font-black text-white tracking-tighter">{stat.value}</div>
+              <div className="text-[10px] text-neutral-600 font-black uppercase tracking-[0.2em] mt-1">{stat.label}</div>
             </div>
-          </div>
+          ))}
         </motion.div>
       </div>
     </section>

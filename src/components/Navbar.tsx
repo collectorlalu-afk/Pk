@@ -23,17 +23,17 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md border-b border-white/5"
+      className="fixed top-10 left-0 right-0 z-50 bg-black/50 backdrop-blur-md border-b border-white/5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-              <span className="text-black font-black text-xl">PK</span>
+          <Link to="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-black rounded-xl border border-white/10 flex items-center justify-center shadow-2xl overflow-hidden">
+              <img src="vault-logo.png" alt="Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="text-xl font-black text-white tracking-tighter uppercase">Sells</span>
-              <span className="text-[8px] text-neutral-500 font-bold tracking-[0.3em] uppercase">Verified</span>
+              <span className="text-xl font-black text-white tracking-tighter uppercase">Vendor</span>
+              <span className="text-xl font-black text-white/40 tracking-tighter uppercase leading-[0.5]">Vault</span>
             </div>
           </Link>
 

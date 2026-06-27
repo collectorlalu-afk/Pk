@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import Ticker from '../components/Ticker';
 import Footer from '../components/Footer';
 import Cart from '../components/Cart';
 import { motion } from 'framer-motion';
@@ -6,6 +7,7 @@ import { motion } from 'framer-motion';
 const LegalPage = ({ title, content }: { title: string; content: React.ReactNode }) => {
   return (
     <div className="bg-black min-h-screen text-white font-sans antialiased">
+      <Ticker />
       <Navbar />
       <main className="pt-40 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <motion.div

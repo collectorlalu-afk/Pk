@@ -4,6 +4,7 @@ import { ShoppingCart, Check, Star, ArrowLeft, ShieldCheck, Zap, Globe, Clock } 
 import { useCart } from '../context/CartContext';
 import { products } from '../constants/products';
 import Navbar from '../components/Navbar';
+import Ticker from '../components/Ticker';
 import Footer from '../components/Footer';
 import Cart from '../components/Cart';
 import { useEffect } from 'react';
@@ -42,6 +43,7 @@ const ProductDetail = () => {
 
   return (
     <div className="bg-black min-h-screen text-white font-sans antialiased">
+      <Ticker />
       <Navbar />
       
       <main className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -57,13 +59,15 @@ const ProductDetail = () => {
             animate={{ opacity: 1, x: 0 }}
             className="space-y-8"
           >
-            <div className="relative aspect-square rounded-[2.5rem] overflow-hidden luxury-border bg-neutral-950">
+            <div className="relative aspect-square rounded-[2.5rem] overflow-hidden bg-black border border-white/5 p-12 flex items-center justify-center">
               <img
-                src={product.image}
+                src={product.lineImage}
                 alt={product.name}
-                className="w-full h-full object-cover opacity-90"
+                className="w-full h-full object-contain opacity-90"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute top-8 right-8 bg-white text-black text-xs font-black px-3 py-1.5 rounded uppercase tracking-tighter shadow-2xl">
+                Sale Price
+              </div>
             </div>
             
             <div className="grid grid-cols-2 gap-4">
@@ -90,7 +94,7 @@ const ProductDetail = () => {
                <span className="inline-block px-4 py-1.5 border border-white/10 rounded-full bg-white/5 text-xs font-bold uppercase tracking-widest text-neutral-400 mb-6">
                 Premium Directory
               </span>
-              <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-4">{product.name}</h1>
+              <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-4 uppercase">{product.name}</h1>
               <div className="flex items-center gap-1 mb-8">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={18} className="text-white" fill="currentColor" />
@@ -104,7 +108,7 @@ const ProductDetail = () => {
             </p>
 
             <div className="bg-white/5 border border-white/10 rounded-[2rem] p-8 mb-10">
-              <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
+              <h3 className="text-lg font-bold mb-6 flex items-center gap-2 uppercase tracking-tighter">
                 <Check className="w-5 h-5 text-white" />
                 What's Included
               </h3>
@@ -119,16 +123,24 @@ const ProductDetail = () => {
             </div>
 
             <div className="mt-auto space-y-6">
-               <div className="flex items-baseline gap-3">
-                  <span className="text-2xl font-bold text-neutral-500">$</span>
-                  <span className="text-6xl font-black text-white tracking-tighter">{product.price}</span>
-                  <span className="text-sm text-neutral-600 font-black uppercase tracking-[0.2em]">one-time access</span>
+               <div className="flex items-baseline gap-4">
+                  <div className="flex flex-col">
+                    <span className="text-sm text-neutral-500 font-bold uppercase tracking-widest">Original Price</span>
+                    <span className="text-2xl font-bold text-neutral-500 line-through">${product.originalPrice.toFixed(2)}</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-white font-bold uppercase tracking-widest">Sale Price</span>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-6xl font-black text-white tracking-tighter">${product.price.toFixed(2)}</span>
+                      <span className="text-xs text-neutral-600 font-black uppercase tracking-[0.2em]">one-time</span>
+                    </div>
+                  </div>
                </div>
 
                <button
                 onClick={handleAddToCart}
                 disabled={isInCart}
-                className={`w-full py-6 rounded-2xl font-black text-xl transition-all duration-300 flex items-center justify-center gap-3 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.1)] ${
+                className={`w-full py-6 rounded-full font-black text-xl transition-all duration-300 flex items-center justify-center gap-3 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.1)] uppercase tracking-tighter ${
                   isInCart 
                   ? 'bg-neutral-800 text-neutral-400 cursor-not-allowed' 
                   : 'bg-white text-black hover:bg-neutral-200'

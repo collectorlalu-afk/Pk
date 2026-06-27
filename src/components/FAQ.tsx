@@ -23,18 +23,18 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-black">
+    <section id="faq" className="py-32 bg-black border-t border-white/5">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-            Frequently Asked <span className="text-muted">Questions</span>
+        <div className="text-center mb-24">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-6 uppercase">
+            Common <span className="text-neutral-600">Questions</span>
           </h2>
-          <p className="text-muted-foreground">
-            Quick answers to help you get started.
+          <p className="text-neutral-500 font-bold uppercase tracking-tight">
+            Clear answers for professional resellers.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-2">
           {faqs.map((faq, index) => (
             <FAQItem key={index} faq={faq} />
           ))}
@@ -48,19 +48,21 @@ const FAQItem = ({ faq }: { faq: { question: string; answer: string } }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-neutral-900">
+    <div className="border-b border-white/5 last:border-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-6 text-left flex justify-between items-center group"
+        className="w-full py-8 text-left flex justify-between items-center group"
       >
-        <span className="text-white font-medium text-lg group-hover:text-neutral-300 transition-colors">
+        <span className="text-white font-black text-xs uppercase tracking-[0.2em] group-hover:text-neutral-400 transition-colors">
           {faq.question}
         </span>
-        {isOpen ? (
-          <Minus className="w-5 h-5 text-muted-foreground" />
-        ) : (
-          <Plus className="w-5 h-5 text-muted-foreground" />
-        )}
+        <div className="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center group-hover:border-white/20 transition-all">
+          {isOpen ? (
+            <Minus className="w-4 h-4 text-white" />
+          ) : (
+            <Plus className="w-4 h-4 text-white" />
+          )}
+        </div>
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -68,10 +70,10 @@ const FAQItem = ({ faq }: { faq: { question: string; answer: string } }) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <div className="pb-8 text-muted-foreground leading-relaxed">
+            <div className="pb-8 text-neutral-500 font-medium leading-relaxed">
               {faq.answer}
             </div>
           </motion.div>

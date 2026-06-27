@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import Ticker from '../components/Ticker';
 import ProductCards from '../components/ProductCards';
 import FAQ from '../components/FAQ';
 import TrustSection from '../components/TrustSection';
@@ -12,6 +13,7 @@ import Testimonials from '../components/Testimonials';
 function Home() {
   return (
     <div className="bg-black min-h-screen text-white selection:bg-white/30 font-sans antialiased">
+      <Ticker />
       <Navbar />
       
       <main>
