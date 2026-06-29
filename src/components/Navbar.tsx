@@ -32,8 +32,8 @@ const Navbar = () => {
               <img src="vault-logo.png" alt="Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="text-xl font-black text-white tracking-tighter uppercase">Vendor</span>
-              <span className="text-xl font-black text-white/40 tracking-tighter uppercase leading-[0.5]">Vault</span>
+              <span className="text-xl font-black text-white tracking-tighter uppercase">PK</span>
+              <span className="text-xl font-black text-white/40 tracking-tighter uppercase leading-[0.5]">Sells</span>
             </div>
           </Link>
 

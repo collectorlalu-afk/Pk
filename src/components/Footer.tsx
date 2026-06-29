@@ -11,8 +11,8 @@ const Footer = () => {
                 <img src="vault-logo.png" alt="Logo" className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col leading-none">
-                <span className="text-xl font-black text-white tracking-tighter uppercase">Vendor</span>
-                <span className="text-xl font-black text-white/40 tracking-tighter uppercase leading-[0.5]">Vault</span>
+                <span className="text-xl font-black text-white tracking-tighter uppercase">PK</span>
+                <span className="text-xl font-black text-white/40 tracking-tighter uppercase leading-[0.5]">Sells</span>
               </div>
             </div>
             <p className="text-neutral-500 text-sm max-w-sm leading-relaxed font-bold uppercase tracking-tight">
@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-neutral-600 text-[10px] font-black uppercase tracking-[0.2em]">© {new Date().getFullYear()} VendorVault. All rights reserved.</p>
+          <p className="text-neutral-600 text-[10px] font-black uppercase tracking-[0.2em]">© {new Date().getFullYear()} PK Sells. All rights reserved.</p>
           <p className="text-neutral-600 text-[10px] uppercase tracking-[0.2em] font-black">Elite Reselling Infrastructure</p>
         </div>
       </div>
